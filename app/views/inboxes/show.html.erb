@@ -11,7 +11,7 @@
  
  <h2>
  Messages
- <%= @inbox.messages.length %>
+ <%= @inbox.messages_count %>
  </h2>
 <%= link_to "New Message", [:new, @inbox, :message] %>
 <%= render partial: 'inboxes/messages/message', collection: @inbox.messages %>

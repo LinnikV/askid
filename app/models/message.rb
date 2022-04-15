@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Message < ApplicationRecord
-  belongs_to :inbox
+  belongs_to :inbox, counter_cache: true
   belongs_to :user
 
   validates :body, presence: true
