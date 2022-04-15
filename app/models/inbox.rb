@@ -1,6 +1,7 @@
-class Inbox < ApplicationRecord
+# frozen_string_literal: true
 
-    validates :name, presence: true
-    validates :name, uniqueness: true
-    validates :name, length: { in: 3..200 }
+class Inbox < ApplicationRecord
+  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :name, length: { in: 3..200 }
 end

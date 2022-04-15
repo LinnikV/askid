@@ -10,11 +10,14 @@ AllCops:
   - 'config.ru'
   - 'Gemfile'
   - 'Rakefile'
+  
 
 Style/FrozenStringLiteralComment:
   Enable: false
 
-  Style/Documentation:
-  Enable: false
+Style/Documentation:
+  Enabled: false
+
+  
 
 
