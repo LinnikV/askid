@@ -1,9 +1,12 @@
 <div id="<%= dom_id inbox %>">
+  <h3>
+    <%= link_to inbox.name, inbox %>
+  </h3>
   <p>
-    <strong>Name:</strong>
-    <%= inbox.name %>
-  </p>
-
   <%= inbox.user.email %>
+  </p>
+  <h4>
+  <%= inbox.created_at.strftime("%d.%b.%Y %H:%M")%>
+  </h4>
 
 </div>

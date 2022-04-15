@@ -3,7 +3,6 @@
 module Inboxes
   class MessagesController < ApplicationController
     before_action :set_inbox
-    
 
     def new
       @message = @inbox.messages.new
@@ -28,7 +27,6 @@ module Inboxes
 
       respond_to do |format|
         format.html { redirect_to @inbox, notice: 'Message was successfully destroyed.' }
-        format.json { head :no_content }
       end
     end
 
