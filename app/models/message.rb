@@ -6,4 +6,6 @@ class Message < ApplicationRecord
 
   validates :body, presence: true
   validates :body, length: { in: 3..1000 }
+
+  acts_as_votable
 end

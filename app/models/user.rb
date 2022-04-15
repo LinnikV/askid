@@ -7,4 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :inboxes, dependent: :destroy
   has_many :messages, dependent: :destroy
+
+  acts_as_voter
 end

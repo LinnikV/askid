@@ -9,6 +9,11 @@
     <%= link_to message.inbox.name, message.inbox %>
   </p>
 
+  <%= button_to "Like", [:upvote, @inbox, message],
+          method: :patch,
+          data: {turbo: "false"} %>
+  <%= message.votes_for.size %>
+
   <p>
     <strong>User:</strong>
     <%= message.user.email %>

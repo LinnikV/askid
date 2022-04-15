@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :inboxes do
-    resources :messages, only: %i[new create destroy], module: :inboxes
+    resources :messages, only: %i[new create destroy], module: :inboxes do
+      member do
+        patch :upvote
+      end
+    end
   end
  
   
