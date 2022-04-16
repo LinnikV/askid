@@ -2,6 +2,7 @@
 
 class InboxesController < ApplicationController
   before_action :set_inbox, only: %i[show edit update destroy]
+  before_action :authorize_inbox, only: %i[edit update destroy]
 
   def index
     @inboxes = Inbox.all
@@ -39,13 +40,17 @@ class InboxesController < ApplicationController
 
   def destroy
     @inbox.destroy
-
     respond_to do |format|
       format.html { redirect_to inboxes_url, notice: 'Inbox was successfully destroyed.' }
     end
   end
 
   private
+
+  def authorize_inbox
+    authorize @inbox
+  end
+
 
   def set_inbox
     @inbox = Inbox.find(params[:id])
