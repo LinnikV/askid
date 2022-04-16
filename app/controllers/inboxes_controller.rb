@@ -51,7 +51,6 @@ class InboxesController < ApplicationController
     authorize @inbox
   end
 
-
   def set_inbox
     @inbox = Inbox.find(params[:id])
   end

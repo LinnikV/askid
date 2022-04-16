@@ -1,10 +1,10 @@
 <%= render @inbox %>
 
 <div>
-  <%= link_to "Edit this inbox", edit_inbox_path(@inbox) %> |
-  <%= link_to "Back to inboxes", inboxes_path %>
+  <%= link_to "Edit", edit_inbox_path(@inbox) if policy(@inbox).edit? %>
+  <%= button_to "Destroy", @inbox, method: :delete if policy(@inbox).destroy? %>
 
-  <%= button_to "Destroy this inbox", @inbox, method: :delete %>
+  <%= link_to "Back", inboxes_path %>
 </div>
 
  <hr>

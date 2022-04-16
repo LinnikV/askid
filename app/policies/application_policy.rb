@@ -35,7 +35,6 @@ class ApplicationPolicy
   def destroy?
     authorize @inbox
   end
-  
 
   class Scope
     def initialize(user, scope)
