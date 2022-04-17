@@ -10,8 +10,13 @@
  <hr>
  
  <h2>
- Messages
- <%= @inbox.messages_count %>
+  Messages:
+  <span id = "message_counter" >
+    <%= @inbox.messages_count %>
+  </span>
  </h2>
-<%= link_to "New Message", [:new, @inbox, :message] %>
+
+<div id = "new_message">
+  <%= render "inboxes/messages/form", message: Message.new %>
+</div>
 <%= render partial: 'inboxes/messages/message', collection: @inbox.messages %>
