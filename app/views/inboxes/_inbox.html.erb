@@ -1,14 +1,17 @@
-<div id="<%= dom_id inbox %>">
+<div id="<%= dom_id inbox %>" >
   <h3>
-    <%= link_to inbox.name, inbox %>
+    <%= link_to inbox.name.capitalize, inbox %>
   </h3>
 
   Messages:
   <%= inbox.messages_count %>
   <p>
-  <%= inbox.user.email %>
+  
   </p>
   <h4>
+  Сreated by:
+  <%= inbox.user.email %>
+  Date:
   <%= inbox.created_at.strftime("%d.%b.%Y %H:%M")%>
   </h4>
 

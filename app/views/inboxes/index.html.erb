@@ -1,13 +1,14 @@
-<h1>Inboxes:<%= @inboxes.count %></h1>
+<h2><%= link_to "New inbox", new_inbox_path %></h2>
+
+<h3>Inboxes:<%= @inboxes.count %></h3>
+
 
 <div id="inboxes">
   <% @inboxes.each do |inbox| %>
     <%= render inbox %>
-    <p>
-      <%= link_to "Show this inbox", inbox %>
-    </p>
+    <hr>
   <% end %>
 </div>
 
-<%= link_to "New inbox", new_inbox_path %>
+
 

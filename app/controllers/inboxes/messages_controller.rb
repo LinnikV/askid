@@ -6,13 +6,7 @@ module Inboxes
 
     def upvote
       @message = @inbox.messages.find(params[:id])
-      if current_user.voted_up_on? @message
-        @message.downvote_from current_user
-      elsif current_user.voted_down_on? @message
-        @message.liked_by current_user
-      else
-        @message.liked_by current_user
-      end
+      @message.upvote! current_user
       redirect_to @inbox
     end
 
@@ -51,10 +45,10 @@ module Inboxes
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: [
-          turbo_stream.remove(@message),
-          turbo_stream.update('message_counter', @inbox.messages_count)
-        ]
-      end
+            turbo_stream.remove(@message),
+            turbo_stream.update('message_counter', @inbox.messages_count)
+          ]
+        end
         format.html { redirect_to @inbox, notice: 'Message was successfully destroyed.' }
       end
     end

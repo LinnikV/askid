@@ -1,23 +1,24 @@
 <div id="<%= dom_id message %>">
-  <p>
-    <strong>Body:</strong>
-    <%= simple_format(message.body) %>
-  </p>
-
-  <p>
-    <strong>Inbox:</strong>
-    <%= link_to message.inbox.name, message.inbox %>
-  </p>
-
-  <%= button_to "Like", [:upvote, @inbox, message],
-          method: :patch,
-          data: {turbo: "false"} %>
-  <%= message.votes_for.size %>
 
   <p>
     <strong>User:</strong>
     <%= message.user.email %>
   </p>
+
+  <p>
+    <strong>Message:</strong>
+     <%= simple_format(message.body) %>
+  </p>
+
+
+  <%= button_to "Like", [:upvote, @inbox, message],
+          method: :patch,
+          data: {turbo: "false"} %>
+          
+  <%= message.cached_votes_total %>
+  
+
+  
 
   <%= button_to "Destroy", inbox_message_path(@inbox, message), method: :delete %>
 
