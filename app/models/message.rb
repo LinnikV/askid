@@ -5,7 +5,7 @@ class Message < ApplicationRecord
   belongs_to :user
 
   validates :body, presence: true
-  validates :body, length: { in: 3..1000 }
+  validates :body, length: { in: 3..300 }
 
   acts_as_votable
 

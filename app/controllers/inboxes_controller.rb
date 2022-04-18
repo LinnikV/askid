@@ -56,6 +56,6 @@ class InboxesController < ApplicationController
   end
 
   def inbox_params
-    params.require(:inbox).permit(:name)
+    params.require(:inbox).permit(:name, :theme_color)
   end
 end
