@@ -11,6 +11,7 @@ module Inboxes
     end
 
     def create
+      
       @message = @inbox.messages.new(message_params)
 
       respond_to do |format|
