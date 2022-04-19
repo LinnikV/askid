@@ -5,7 +5,10 @@ class InboxesController < ApplicationController
   before_action :authorize_inbox, only: %i[edit update destroy]
 
   def index
-    @inboxes = Inbox.all
+    #@inboxes = Inbox.all
+    @q = Inbox.ransack(params[:q])
+    @inboxes = @q.result(distinct: true).order(created_at: :desc)
+
   end
 
   def show; end

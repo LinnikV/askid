@@ -1,6 +1,9 @@
 <h2><%= link_to "New inbox", new_inbox_path %></h2>
 
 <h3>Inboxes:<%= @inboxes.count %></h3>
+<%= sort_link(@q, :name, default_order: :desc) %>
+<%= sort_link(@q, :created_at, default_order: :desc) %>
+<%= sort_link(@q, :messages_count, default_order: :desc) %>
 
 
 <div id="inboxes">
